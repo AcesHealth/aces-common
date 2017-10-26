@@ -1,0 +1,22 @@
+{
+  "name": "aces-common",
+  "version": "0.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tslint": "node node_modules/tslint/bin/tslint --project .",
+    "build": "tsc -p .",
+    "dev-watch": "tsc -w -p .",
+    "postinstall": "npm run build"
+  },
+  "private": true,
+  "dependencies": {
+    "typescript": "^2.5.3"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^4.0.1",
+    "tslint": "^5.8.0"
+  }
+}
