@@ -14,7 +14,7 @@ export function setPermissions(permissions : Permission[]) {
 }
 
 /**
- * True if the given permissions allow creating an organization
+ * Returns true if the given permissions allow creating an organization
  * @param permissions The given permissions
  */
 export function createOrganization(permissions : Permission[] = defaultPermissions) {
@@ -22,7 +22,7 @@ export function createOrganization(permissions : Permission[] = defaultPermissio
 }
 
 /**
- * True if the given permissions allow deleting the given organization
+ * Returns true if the given permissions allow deleting the given organization
  * @param orgId The given organization
  * @param permissions The given permissions
  */
@@ -31,7 +31,16 @@ export function deleteOrganization(orgId : number, permissions : Permission[] = 
 }
 
 /**
- * True if the given permissions allow creating a trial in the given organization
+ * Returns a list of editable fields for the given organziation and permissions
+ * @param orgId The given organization
+ * @param permissions The given permissions
+ */
+export function getEditableOrganizationFields(orgId : number, permissions : Permission[] = defaultPermissions) {
+    return getEditableFields(`organizations/${orgId}`, permissions);
+}
+
+/**
+ * Returns true if the given permissions allow creating a trial in the given organization
  * @param orgId The given organization
  * @param permissions The given permissions
  */
@@ -40,13 +49,23 @@ export function createTrial(orgId : number, permissions : Permission[] = default
 }
 
 /**
- * True if the given permissions allow deleting the given trial
+ * Returns true if the given permissions allow deleting the given trial
  * @param orgId The given organization
  * @param trialId The given trial
  * @param permissions The given permissions
  */
 export function deleteTrial(orgId : number, trialId : number, permissions : Permission[] = defaultPermissions) {
     return canDelete(`organizations/${orgId}/trials/${trialId}`, permissions);
+}
+
+/**
+ * Returns a list of editable fields for the given trial and permissions
+ * @param orgId The given organization
+ * @param trialId The given trial
+ * @param permissions The given permissions
+ */
+export function getEditableTrialFields(orgId : number, trialId : number, permissions : Permission[] = defaultPermissions) {
+    return getEditableFields(`organizations/${orgId}/trials/${trialId}`, permissions);
 }
 
 /**
@@ -65,6 +84,23 @@ function canCreate(url : string, permissions : Permission[]) {
  */
 function canDelete(url : string, permissions : Permission[]) {
     return can(url, 'DELETE', permissions);
+}
+
+/**
+ * Returns the editable fields of the given url and permissions
+ * @param url The given resource url to test
+ * @param permissions The given permissions
+ */
+function getEditableFields(url : string, permissions : Permission[]) {
+    const auth = authorizeRequest({
+        url,
+        method : 'PUT'
+    }, permissions);
+
+    if(auth.access == 'DENY')
+        return [];
+
+    return auth.endpoints || 'ALL';
 }
 
 /**

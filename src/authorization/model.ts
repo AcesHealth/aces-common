@@ -3,7 +3,7 @@ export interface Permission {
     readonly operations : Operation[];
 }
 
-export type Operation = "C" | "R" | "U" | "D";
+export type Operation = 'C' | 'R' | 'U' | 'D';
 
 export interface Request {
     readonly url : string;
@@ -11,6 +11,6 @@ export interface Request {
 }
 
 export interface Authorization {
-    readonly access : "ALLOW" | "DENY";
+    readonly access : 'ALLOW' | 'DENY';
     readonly endpoints : string[] | null;
 }
