@@ -3,7 +3,7 @@ import { OrganizationType } from './organizationType';
 export interface Organization {
     readonly id: number;
     readonly name : string;
-    readonly logoUrl : string;
-    readonly size : string;
+    readonly logoUrl : string | null;
+    readonly size : string | null;
     readonly organizationType : OrganizationType;
 }
