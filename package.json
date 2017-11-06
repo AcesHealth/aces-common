@@ -4,19 +4,22 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "tslint": "node node_modules/tslint/bin/tslint --project .",
     "build": "tsc -p .",
     "dev-watch": "tsc -w -p .",
+    "test": "npm run build && mocha ./dist/test/all.js",
     "postinstall": "npm run build"
   },
   "private": true,
   "dependencies": {
+    "@types/lodash": "^4.14.80",
+    "@types/node": "^8.0.48",
     "lodash": "^4.17.4",
     "typescript": "^2.5.3"
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.80",
+    "@types/chai": "^4.0.4",
+    "@types/mocha": "^2.2.44",
     "chai": "^4.1.2",
     "mocha": "^4.0.1",
     "tslint": "^5.8.0"
