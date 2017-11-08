@@ -1,6 +1,8 @@
 // Model
+export * from './model/administration';
 export * from './model/organization';
 export * from './model/organizationType';
+export * from './model/questionType';
 export * from './model/sex';
 export * from './model/trialType';
 export * from './model/units/current';
