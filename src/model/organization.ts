@@ -5,5 +5,5 @@ export interface Organization {
     readonly name : string;
     readonly logoUrl : string | null;
     readonly size : string | null;
-    readonly organizationType : OrganizationType;
+    readonly type : OrganizationType;
 }
