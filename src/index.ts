@@ -14,5 +14,10 @@ export * from './model/units/volume';
 
 // Authorization
 export * from './authorization/model';
-export * from './authorization/authorizer';
-export * from './authorization/capability';
+
+import * as Authorizer from './authorization/authorizer';
+import * as Capability from './authorization/capability';
+export {
+    Authorizer,
+    Capability
+};
