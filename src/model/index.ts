@@ -5,5 +5,6 @@ import { OrganizationType } from './organizationType';
 import { QuestionType } from './questionType';
 import { Sex } from './sex';
 import { TrialType } from './trialType';
+import { Trial } from './trial';
 
-export { Units, Administration, Organization, OrganizationType, QuestionType, Sex, TrialType };
+export { Units, Administration, Organization, OrganizationType, QuestionType, Sex, TrialType, Trial };
