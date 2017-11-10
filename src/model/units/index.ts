@@ -6,8 +6,8 @@ import { Time } from './time';
 import { Volume } from './volume';
 
 function symbolOf(unit : Current | Length | Mass | Temperature | Time | Volume) {
-    if(unit == Current.ampere) return 'A';
     if(unit == Current.milliampere) return 'mA';
+    if(unit == Current.ampere) return 'A';
     if(unit == Current.kiloampere) return 'kA';
 
     if(unit == Length.millimeter) return 'mm';
@@ -16,7 +16,7 @@ function symbolOf(unit : Current | Length | Mass | Temperature | Time | Volume) 
     if(unit == Length.kilometer) return 'km';
 
     if(unit == Mass.milligram) return 'mg';
-    if(unit == Mass.gram) return 'mg';
+    if(unit == Mass.gram) return 'g';
     if(unit == Mass.kilogram) return 'kg';
 
     if(unit == Temperature.Celcius) return 'C';
@@ -29,7 +29,7 @@ function symbolOf(unit : Current | Length | Mass | Temperature | Time | Volume) 
     if(unit == Time.day) return 'd';
     if(unit == Time.week) return 'w';
     if(unit == Time.month) return 'mon';
-    if(unit == Time.year) return 'year';
+    if(unit == Time.year) return 'yr';
 
     if(unit == Volume.millilitre) return 'mL';
     if(unit == Volume.litre) return 'L';
