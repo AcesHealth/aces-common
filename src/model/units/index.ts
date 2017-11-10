@@ -34,11 +34,11 @@ function symbolOf(unit : Current | Length | Mass | Temperature | Time | Volume) 
     if(unit == Volume.millilitre) return 'mL';
     if(unit == Volume.litre) return 'L';
 
-    // if the below line fails to compile, you are missing a unit -> symbol conversion
+    // if this line fails to compile, you are missing a unit -> symbol conversion
     return assertUnreachable(unit);
 }
 
-function assertUnreachable(x : never) {
+function assertUnreachable(x : never) : never {
     throw new Error('Unreachable function called');
 }
 
