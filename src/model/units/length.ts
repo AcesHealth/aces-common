@@ -1,11 +1,11 @@
-export enum LengthUnit {
+export enum Unit {
     millimeter = 'millimeter',
     centimeter = 'centimeter',
     meter = 'meter',
     kilometer = 'kilometer'
 }
 
-export enum LengthSymbol {
+export enum Symbol {
     mm = 'mm',
     cm = 'cm',
     m = 'm',

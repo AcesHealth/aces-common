@@ -1,10 +1,10 @@
-export enum CurrentUnit {
+export enum Unit {
     milliampere = 'milliampere',
     ampere = 'ampere',
     kiloampere = 'kiloampere'
 }
 
-export enum CurrentSymbol {
+export enum Symbol {
     mA = 'mA',
     A = 'A',
     kA = 'kA'

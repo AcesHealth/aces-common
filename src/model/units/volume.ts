@@ -1,9 +1,9 @@
-export enum VolumeUnit {
+export enum Unit {
     millilitre = 'millilitre',
     litre = 'litre'
 }
 
-export enum VolumeSymbol {
+export enum Symbol {
     mL = 'mL',
     L = 'L'
 }

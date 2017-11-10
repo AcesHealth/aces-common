@@ -1,4 +1,4 @@
-export enum TimeUnit {
+export enum Unit {
     millisecond = 'millisecond',
     second = 'second',
     minute = 'minute',
@@ -9,7 +9,7 @@ export enum TimeUnit {
     year = 'year'
 }
 
-export enum TimeSymbol {
+export enum Symbol {
     ms = 'ms',
     s = 's',
     min = 'min',
