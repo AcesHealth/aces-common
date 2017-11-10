@@ -5,7 +5,7 @@ import { Temperature } from './temperature';
 import { Time } from './time';
 import { Volume } from './volume';
 
-function symbolOf(unit : Current | Length | Mass | Temperature | Time | Volume) {
+function getSymbol(unit : Current | Length | Mass | Temperature | Time | Volume) {
     if(unit == Current.milliampere) return 'mA';
     if(unit == Current.ampere) return 'A';
     if(unit == Current.kiloampere) return 'kA';
@@ -42,4 +42,4 @@ function assertUnreachable(x : never) : never {
     throw new Error('Unreachable function called');
 }
 
-export { Current, Length, Mass, Temperature, Time, Volume, symbolOf };
+export { Current, Length, Mass, Temperature, Time, Volume, getSymbol };
