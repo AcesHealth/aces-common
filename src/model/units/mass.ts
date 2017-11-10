@@ -1,11 +1,5 @@
-export enum Unit {
+export enum Mass {
     milligram = 'milligram',
     gram = 'gram',
     kilogram = 'kilogram'
-}
-
-export enum Symbol {
-    mg = 'mg',
-    g = 'g',
-    kg = 'kg'
 }

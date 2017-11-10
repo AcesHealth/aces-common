@@ -1,9 +1,4 @@
-export enum Unit {
+export enum Temperature {
     Celcius = 'Celcius',
     Farenheit = 'Farenheit'
-}
-
-export enum Symbol {
-    C = 'C',
-    F = 'F'
 }
