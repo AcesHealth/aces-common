@@ -4,6 +4,7 @@ import { DataName } from './dataName';
 import { Organization } from './organization';
 import { OrganizationType } from './organizationType';
 import { QuestionType } from './questionType';
+import { QuestionTypeServer } from './questionTypeServer';
 import { Sex } from './sex';
 import { TrialType } from './trialType';
 import { Trial } from './trial';
@@ -16,6 +17,7 @@ export {
     Administration,
     Organization,
     OrganizationType,
+    QuestionTypeServer,
     QuestionType,
     Sex,
     TrialType,
