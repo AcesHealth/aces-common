@@ -5,6 +5,7 @@ import { Organization } from './organization';
 import { OrganizationType } from './organizationType';
 import { QuestionType } from './questionType';
 import { QuestionTypeServer } from './questionTypeServer';
+import { Method } from './method';
 import { Sex } from './sex';
 import { TrialType } from './trialType';
 import { Trial } from './trial';
@@ -19,6 +20,7 @@ export {
     OrganizationType,
     QuestionTypeServer,
     QuestionType,
+    Method,
     Sex,
     TrialType,
     Trial
