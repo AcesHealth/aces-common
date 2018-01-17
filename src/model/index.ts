@@ -10,6 +10,7 @@ import { Sex } from './sex';
 import { TrialType } from './trialType';
 import { Trial } from './trial';
 import * as Units from './units';
+import { UserListColumns } from './userListColumns';
 
 export {
     Units,
@@ -23,5 +24,6 @@ export {
     Method,
     Sex,
     TrialType,
-    Trial
+    Trial,
+    UserListColumns
 };
