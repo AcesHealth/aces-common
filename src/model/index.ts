@@ -10,7 +10,7 @@ import { Sex } from './sex';
 import { TrialType } from './trialType';
 import { Trial } from './trial';
 import * as Units from './units';
-import * as Survey from './survey'
+import * as Surveys from './survey'
 import { UserListColumns } from './userListColumns';
 
 export {
@@ -24,7 +24,7 @@ export {
     QuestionType,
     Method,
     Sex,
-    Survey,
+    Surveys,
     TrialType,
     Trial,
     UserListColumns
