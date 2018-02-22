@@ -1,10 +1,11 @@
 import { QuestionType } from './questionType';
-import { Id } from '../utils/typeUtils';
+import { Id, StringId } from '../utils/typeUtils';
 
 export interface Survey {
     readonly id: SurveyId;
     readonly name : string;
     readonly branches : Branch[];
+    readonly startBranch : BranchId;
 }
 
 export interface Branch {
@@ -16,7 +17,7 @@ export interface Question {
     readonly id : QuestionId;
     readonly type : QuestionType;
     readonly prompt : string;
-    readonly mediaId : MediaId | null;
+    readonly media : Media | null;
     readonly nextId : QuestionId | null;
     readonly responses : Response[];
 }
@@ -24,7 +25,7 @@ export interface Question {
 export interface Response {
     readonly id : ResponseId;
     readonly text : string;
-    readonly mediaId : MediaId | null;
+    readonly media : Media | null;
     readonly order : number;
     readonly branchTo : BranchId | null;
 }
@@ -38,4 +39,4 @@ export type SurveyId = Id<'Survey'>
 export type BranchId = Id<'Branch'>
 export type QuestionId = Id<'Question'>
 export type ResponseId = Id<'Response'>
-export type MediaId = Id<'Media'>
+export type MediaId = StringId<'Media'>
