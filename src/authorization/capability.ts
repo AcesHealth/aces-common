@@ -69,6 +69,49 @@ export function getEditableTrialFields(orgId : number, trialId : number, permiss
 }
 
 /**
+ * Returns true if the given permissions allow creating a survey in the given organization and trial
+ * @param orgId The given organization
+ * @param trialId The given organization
+ * @param permissions The given permissions
+ */
+export function createSurvey(orgId : number, trialId : number, permissions : Permission[] = defaultPermissions) {
+    return canCreate(`organizations/${orgId}/trials/${trialId}/surveys`, permissions);
+}
+
+/**
+ * Returns true if the given permissions allow view a given survey
+ * @param orgId The given organization
+ * @param trialId The given organization
+ * @param surveyId The given survey
+ * @param permissions The given permissions
+ */
+export function viewSurvey(orgId : number, trialId : number, surveyId : number, permissions : Permission[] = defaultPermissions) {
+    return canRead(`organizations/${orgId}/trials/${trialId}/surveys/${surveyId}`, permissions);
+}
+
+/**
+ * Returns true if the given permissions allow deleting a given survey
+ * @param orgId The given organization
+ * @param trialId The given organization
+ * @param surveyId The given survey
+ * @param permissions The given permissions
+ */
+export function deleteSurvey(orgId : number, trialId : number, surveyId : number, permissions : Permission[] = defaultPermissions) {
+    return canDelete(`organizations/${orgId}/trials/${trialId}/surveys/${surveyId}`, permissions);
+}
+
+/**
+ * Returns true if the given permissions allow editing a given survey
+ * @param orgId The given organization
+ * @param trialId The given organization
+ * @param surveyId The given survey
+ * @param permissions The given permissions
+ */
+export function editSurvey(orgId : number, trialId : number, surveyId : number, permissions : Permission[] = defaultPermissions) {
+    return canModify(`organizations/${orgId}/trials/${trialId}/surveys/${surveyId}/**`, permissions);
+}
+
+/**
  * Returns true if the given permissions are authorized to create the given resource
  * @param url The given resource url to test
  * @param permissions The given permissions
@@ -78,12 +121,30 @@ function canCreate(url : string, permissions : Permission[]) {
 }
 
 /**
+ * Returns true if the given permissions are authorized to view the given resource
+ * @param url The given resource url to test
+ * @param permissions The given permissions
+ */
+function canRead(url : string, permissions : Permission[]) {
+    return can(url, 'GET', permissions);
+}
+
+/**
  * Returns true if the given permissions are authorized to delete the given resource
  * @param url The given resource url to test
  * @param permissions The given permissions
  */
 function canDelete(url : string, permissions : Permission[]) {
     return can(url, 'DELETE', permissions);
+}
+
+/**
+ * Returns true if the given permissions are authorized to edit the given resource
+ * @param url The given resource url to test
+ * @param permissions The given permissions
+ */
+function canModify(url : string, permissions : Permission[]) {
+    return can(url, 'PUT', permissions);
 }
 
 /**

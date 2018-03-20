@@ -5,7 +5,6 @@ export interface Survey {
     readonly id: SurveyId;
     readonly name : string;
     readonly branches : Branch[];
-    readonly startBranch : BranchId;
 }
 
 export interface Branch {
@@ -24,7 +23,7 @@ export interface Question {
 
 export interface Response {
     readonly id : ResponseId;
-    readonly text : string;
+    readonly text : string | null;
     readonly media : Media | null;
     readonly order : number;
     readonly branchTo : BranchId | null;
@@ -35,8 +34,8 @@ export interface Media {
     readonly url : string;
 }
 
-export type SurveyId = Id<'Survey'>
-export type BranchId = Id<'Branch'>
-export type QuestionId = Id<'Question'>
-export type ResponseId = Id<'Response'>
-export type MediaId = StringId<'Media'>
+export type SurveyId = Id<'Survey'>;
+export type BranchId = Id<'Branch'>;
+export type QuestionId = Id<'Question'>;
+export type ResponseId = Id<'Response'>;
+export type MediaId = StringId<'Media'>;
