@@ -1,6 +1,6 @@
 {
   "name": "aces-common",
-  "version": "0.1.01",
+  "version": "0.1.02",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
