@@ -4,16 +4,11 @@ import { Id, StringId } from '../utils/typeUtils';
 export interface Survey {
     readonly id: SurveyId;
     readonly name : string;
-    readonly branches : Branch[];
-}
-
-export interface Branch {
-    readonly id : BranchId;
-    readonly questions : Question[];
 }
 
 export interface Question {
     readonly id : QuestionId;
+    readonly branchId : BranchId;
     readonly type : QuestionType;
     readonly prompt : string;
     readonly media : Media | null;
