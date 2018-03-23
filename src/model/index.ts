@@ -1,11 +1,13 @@
 import { Administration } from './administration';
 import { DataClassification } from './dataClassification';
 import { DataName } from './dataName';
+import { Method } from './method';
+import { NotificationSourceType } from './notificationSourceType';
+import { NotificationType } from './notificationType';
 import { Organization } from './organization';
 import { OrganizationType } from './organizationType';
 import { QuestionType } from './questionType';
 import { QuestionTypeServer } from './questionTypeServer';
-import { Method } from './method';
 import { Sex } from './sex';
 import { TrialType } from './trialType';
 import { Trial } from './trial';
@@ -18,11 +20,13 @@ export {
     DataClassification,
     DataName,
     Administration,
+    Method,
+    NotificationType,
+    NotificationSourceType,
     Organization,
     OrganizationType,
     QuestionTypeServer,
     QuestionType,
-    Method,
     Sex,
     Surveys,
     TrialType,
