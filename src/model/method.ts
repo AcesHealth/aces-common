@@ -3,6 +3,7 @@ export enum Method {
     OralTablet = 'Oral Tablet',
     OralCapsule = 'Oral Capsule',
     OralSolution = 'Oral Solution',
+    MixWithFood = 'Mix With Food',
     Injectable = 'Injectable',
     TopicalCream = 'Topical Cream',
     TopicalPowder = 'Topical Powder',
